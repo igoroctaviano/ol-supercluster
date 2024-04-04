@@ -134,7 +134,7 @@ class SuperCluster<P extends GeoJsonProperties> extends VectorSource {
      */
     this.geojsonFunction_ = options.geojsonFunction ?? function(feature : Feature) :  Supercluster.PointFeature<P> {
       const geometry = /** @type {Point} */ (feature.getGeometry()) as Point;
-      assert(geometry.getType() == 'POINT',
+      assert(geometry.getType() == 'Point',
         10); // The default `geojsonFunction` can only handle `Point` geometries
       return {
         "type": "Feature",
